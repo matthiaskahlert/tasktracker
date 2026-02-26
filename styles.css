@@ -1,0 +1,193 @@
+/* grundlegendes styling für den body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5; /* zeilenhöhe für bessere lesbarkeit */
+    background-color: #f9f9f9; 
+    padding: 2rem; /* abstand zum rand der seite */
+}
+
+/* zentrierung für header-texte */
+header, h1, h2, h3 {
+    text-align: center; 
+    margin-bottom: 1rem; /* abstand nach unten */
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555; /* leichtes grau für erklärenden text */
+    margin-bottom: 1.5rem;
+}
+
+/* info-box für erklärungen */
+.info-box {
+    max-width: 600px;
+    margin: 0 auto 2rem auto; /* zentriert und abstand nach unten */
+    background-color: #e3f2fd; /* helles blau */
+    border-left: 4px solid #007BFF; /* blauer akzent */
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.info-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+}
+
+.info-box p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* styling des formulars */
+form {
+    max-width: 600px; /* maximale breite, damit es nicht zu breit wird */
+    margin: 0 auto; /* zentriert das formular horizontal */
+    background-color: #fff; 
+    padding: 2rem; /* innenabstand */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+/* labels fett und untereinander */
+label, .select-container label {
+    font-weight: 600; /* etwas kräftiger als normal */
+    display: block; /* label blockiert, damit input darunter steht */
+    margin-bottom: 0.4rem; /* abstand zum input */
+}
+
+/* inputs, textarea und select-felder */
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    padding: 0.5rem; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 100%; 
+    max-width: 400px; 
+    box-sizing: border-box; /* padding und border werden in die breite einberechnet */
+    margin-bottom: 1rem; 
+}
+
+/* fokus-effekt: blaues glow beim anklicken */
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none; /* entfernt standard outline */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* leichter schatten */
+}
+
+/* container für prio select-felder */
+.select-container {
+    display: flex; /* flexbox für vertikale ausrichtung */
+    flex-direction: column; /* label über select */
+    align-items: flex-start; /* linksbündig */
+}
+
+/* button styling */
+button {
+    padding: 0.5rem 1rem; 
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    border: none; 
+    border-radius: 4px; 
+    background-color: #007BFF; 
+    color: white; 
+    cursor: pointer; /* hand-cursor */
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* leichter schatten */
+    transition: background-color 0.2s, transform 0.2s; /* hover-effekt */
+}
+
+/* hover-effekt für button */
+button:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); /* leichtes button anheben-animation */
+}
+
+/* container für aufgabenliste */
+.task-container-list {
+    max-width: 600px; /* breite wie formular */
+    margin: 2rem auto; /* abstand und zentriert */
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* schatten wie formular */
+}
+
+/* ul innerhalb des task-containers */
+.task-container-list ul {
+    list-style: none;  /* entfernt bulletpoints */
+    padding-left: 0;   /* entfernt standard-einzug */
+}
+
+/* einzelne aufgaben */
+.task-container-list li {
+    margin-bottom: 1rem; /* abstand zwischen aufgaben */
+    padding: 1rem; 
+    background-color: #fff;
+    border-radius: 6px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex; /* flexbox für task-content und delete-button */
+    justify-content: space-between; /* task links, button rechts */
+    align-items: center; /* vertikal zentriert */
+}
+
+/* task-content nimmt den meisten platz ein */
+.task-content {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+/* delete-button styling */
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: transform 0.2s;
+    flex-shrink: 0; /* button behält seine größe */
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+}
+
+/* prio-farbe */
+.task-container-list .hoch {
+    color: red; 
+    font-weight: 600; 
+}
+
+.task-container-list .mittel {
+    color: orange; 
+    font-weight: 600;
+}
+
+.task-container-list .niedrig {
+    color: green; 
+    font-weight: 600;
+}
+
+/* empty-state für leere aufgabenliste */
+.task-container-list .empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 2rem;
+    background-color: transparent;
+    box-shadow: none;
+}
+/* Hinweis, wenn Liste leer*/
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 2rem;
+}
