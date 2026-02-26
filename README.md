@@ -15,6 +15,8 @@ Eine schlanke, intuitive Webanwendung zur Verwaltung von Aufgaben mit Priorität
 - 📱 Responsive Design
 
 ## 🚀 Verwendung
+### Im Browser öffnen
+# Besuche https://matthiaskahlert.github.io/tasktracker/
 
 ### Lokal starten:
 
