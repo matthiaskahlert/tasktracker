@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <!-- Für mobile darstellung -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>TaskTracker</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>✅ TaskTracker</h1>
+        <p class="subtitle">Aufgabenverwaltung mit Prioritäten</p>
+    </header>
+    
+    <h2>Planungstool</h2>
+    <p class="intro-text">Erstelle, priorisiere und verfolge deine Aufgaben. Alle Aufgaben werden in einer übersichtlichen Liste angezeigt und nach Prio sortiert.</p>
+    
+    <div class="info-box">
+        <strong>ℹ️ Was passiert beim Speichern?</strong>
+        <p>Jede neue Aufgabe wird lokal im Browser gespeichert. Damit bei Reload die Aufgaben nicht verloren gehen wird <strong>localStorage</strong> verwendet und in der Liste angezeigt. Zusätzlich wird die Aufgabe per <strong>Fetch API</strong> als POST-Request an eine Test-API (JSONPlaceholder) gesendet. Die Server-Antwort kannst du in der Browser-Konsole (F12) einsehen.</p>
+    </div>
+
+    <form id="taskForm">
+        Aufgabe formulieren: <br>
+        <textarea id="taskName" name="taskName" placeholder="Bitte Aufgabe formulieren" required></textarea><br><br>
+
+        Fälligkeitsdatum der Aufgabe: <br>
+        <input type="date" id="taskDate" name="taskDate" required><br><br>
+
+        Priorität auswählen: <br>
+        <select id="prio" required>
+            <option value="" selected="selected">Bitte wählen</option>
+            <option value="niedrig">niedrig</option>
+            <option value="mittel">mittel</option>
+            <option value="hoch">hoch</option>
+        </select><br><br>
+
+        <button type="submit">Aufgabe speichern</button>
+    </form>
+
+    <div class="task-container-list">
+        <h3>Aufgabenliste:</h3>
+        <ul id="taskList"></ul>
+    </div>
+</body>
+</html>
